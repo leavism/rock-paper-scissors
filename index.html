@@ -1,47 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script>
 
-            function computerPlay() {
-                let options = ["rock", "paper", "scissors"];
-                let choice = Math.floor(Math.random() * 3) + 0;
-                return options[choice];
+<head>
+    <script>
+        let options = ["rock", "paper", "scissors"];
+
+        function computerPlay() {
+            let choice = Math.floor(Math.random() * 3) + 0;
+            return options[choice];
+        }
+
+        // Determine whether the PLAYER won or lost
+        // true: won
+        // false: lost
+        // null: tie
+        // Wrote nested if so I didn't have to type && comparisons. This was a preference descision to make reading the code easier
+        function calculator(pSelection, cSelection) {
+            if (pSelection === cSelection) return null;     // If same options, return null
+            else if (pSelection == "rock") {                // If player chose rock,
+                if (cSelection == "paper") return false;    // If computer chose paper, player lost
+                return true;                                // Otherwise player wins
+            } else if (pSelection == "paper") {
+                if (cSelection == "scissors") return false;
+                return true;
+            } else if (pSelection == "scissors") {
+                if (cSelection == "rock") return false;
+                return true;
             }
+        }
 
-            function playRound(playerSelection, computerSelection){
+        function game() {
+            function playRound(playerSelection, computerSelection) {
                 let result = calculator(playerSelection, computerSelection);
 
-                if(result) return `You win! ${playerSelection} beats ${computerSelection}.`;
+                if (result) return `You win! ${playerSelection} beats ${computerSelection}.`;
                 else if (result === null) return `It's a tie! Both chose ${computerSelection}.`;
                 else return `You lose! ${computerSelection} beats ${playerSelection}.`
             }
 
-            // Determine whether the PLAYER won or lost
-            // true: won
-            // false: lost
-            // null: tie
-            function calculator(pSelection, cSelection){
-                if (pSelection === cSelection) return null;
-                else if(pSelection == "rock"){
-                    if(cSelection == "paper") return false;
-                    return true;
-                } else if(pSelection == "paper"){
-                    if(cSelection == "scissors") return false;
-                    return true;
-                } else if(pSelection =="scissors") {
-                    if(cSelection == "rock") return false;
-                    return true;
+            function viablePrompt() {
+                //First prompt
+                let playerChoice = prompt("Pick rock, paper, or scissors", "").toLowerCase();
+
+                //If player didn't pick viable option, start a prompt loop
+                if (options.indexOf(playerChoice) < 0) var answered = true;
+
+                //Loop prompt until a viable option is picked
+                while (answered) {
+                    playerChoice = prompt("Pick rock, paper, or scissors", "").toLowerCase();
+                    if (options.indexOf(playerChoice) > -1) answered = false;
                 }
+                return playerChoice;
             }
 
-            let player = "rock";
-            let computer = computerPlay();
-            console.log(playRound(player, computer));
-        </script>
-    </head>
+            let pScore = 0;
+            let cScore = 0;
 
-    <body>
-        <h1>Please check the console for now.</h1>
-    </body>
+            for(let round = 1; round <= 5; round++){
+                let player = viablePrompt();
+                let computer = computerPlay();
+
+                result = calculator(player, computer)
+                if (result) pScore++;
+                else if (result === null);
+                else cScore++;
+                console.log(`Round ${round} over.`)
+            }
+            
+            if (pScore == cScore) console.log(`Tie! Both have a score of ${cSCore} points each.`);
+            else if (pScore > cScore) console.log(`Player with ${pScore} points wins!. Computer had ${cScore} points.`);
+            else console.log(`Computer with ${cScore} points win. Player had ${pScore} points.`)
+        }
+        game();
+    </script>
+</head>
+
+<body>
+    <h1>Please check the console for now.</h1>
+</body>
+
 </html>
