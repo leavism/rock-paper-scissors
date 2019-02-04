@@ -1,0 +1,120 @@
+* {
+    margin: 0; padding: 0;
+    font-size: 12pt;
+}
+
+
+#container {
+    max-width: 750px;
+    margin: 20px auto;
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-areas: "log choices score";
+    grid-template-columns: 200px 350px 200px;
+    grid-template-rows: 900px;
+}
+
+log {
+    grid-area: log;
+    word-wrap: break-word;
+    /* background-color: dodgerblue; */
+
+}
+
+choices {
+    grid-area: choices;
+    margin-left: 2px;
+}
+
+score {
+    grid-area: score;
+    /* background: dodgerblue; */
+}
+
+label {
+    font-size: 14pt;
+}
+
+choices label {
+    display: block;
+}
+
+.startBtn, .rockBtn, .paperBtn, .scissorBtn {
+    padding: 5px 7px 5px 7px;
+    border: black 1px solid;
+    position: relative;
+    background: white;
+}
+
+playerChoices {
+    position: relative;
+    margin-top: 25px;
+}
+
+.rockBtn, .paperBtn, .scissorBtn {
+    margin: 10px 4px 0 0;
+}
+
+.startBtn{
+    margin-top: 0px;
+}
+
+.startBtn:active, .rockBtn:active, .paperBtn:active, .scissorBtn:active {
+    color: black;
+    border: black 1px dashed;
+}
+
+.pScore, .cScore {
+    border: black 1px solid;
+    padding: 3px 0 3px 3px;
+    margin-bottom: 10px;
+}
+
+.pValue, .cValue {
+    float: right;
+    padding-right: 3px;
+}
+
+p {
+    margin-top: 7px;
+}
+
+log p {
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
