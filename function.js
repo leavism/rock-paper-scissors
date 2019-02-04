@@ -195,10 +195,10 @@ function updateLog(text){
 
 
     let nListCount = log.childElementCount;
-    if(nListCount > 10) {
+    if(nListCount > 20) {
         log.removeChild(log.lastElementChild);
         log.removeChild(log.lastElementChild);
-    } else if (nListCount > 12){
+    } else if (nListCount > 22){
         log.removeChild(log.lastElementChild);
         log.removeChild(log.lastElementChild);
         log.removeChild(log.lastElementChild);
