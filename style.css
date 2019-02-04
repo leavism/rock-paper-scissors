@@ -3,6 +3,10 @@
     font-size: 12pt;
 }
 
+.darken {
+    background: rgb(37, 37, 37); color: rgb(214, 214, 214);
+}
+
 
 #container {
     max-width: 750px;
@@ -72,10 +76,25 @@ playerChoices {
     border: black 1px dashed;
 }
 
+.darkBtn {
+    background: rgb(37, 37, 37);
+    color: rgb(214, 214, 214);
+    border: rgb(214, 214, 214) solid 1px;
+}
+
+.darkBtn:active {
+    border: rgb(214, 214, 214) dashed 1px;
+    color: rgb(214, 214, 214);
+}
+
 .pScore, .cScore {
     border: black 1px solid;
     padding: 3px 0 3px 3px;
     margin-bottom: 10px;
+}
+
+.darkScore {
+    background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: rgb(214, 214, 214) solid 1px;
 }
 
 .pValue, .cValue {

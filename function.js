@@ -1,5 +1,9 @@
-let startBtn = document.querySelector(".startBtn");
-startBtn.addEventListener("click", start);
+let startBtn = document.querySelectorAll(".startBtn, .startBtn.darkBtn");
+
+startBtn.forEach((sButton) => {
+    sButton.addEventListener("click", start);
+})
+
 
 let log = document.querySelector("log");
 let choices = document.querySelector("choices");
@@ -52,8 +56,10 @@ function start() {
     let prompt1 = document.createElement("p");
     prompt1.textContent = "it awaits your choice."
 
-    let startBtn = document.querySelector('button[class="startBtn"]');
-    startBtn.remove();
+    startBtn.forEach((sButton) => {
+        sButton.remove();
+    })
+    
 
     log.prepend(startP);
 
@@ -254,14 +260,21 @@ function calculator(pSelection, cSelection) {
 
 function darkMode(){
     let page = document.querySelector("*");
-    page.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214);")
+    page.classList.toggle("darken");
+    // page.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214);")
 
-    rockBtn.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
-    paperBtn.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
-    scissorBtn.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
-    startBtn.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
+    rockBtn.classList.toggle("darkBtn")
+    paperBtn.classList.toggle("darkBtn")
+    scissorBtn.classList.toggle("darkBtn")
+    // startBtn.classList.toggle("darkBtn")
 
-    pScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
-    cScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
+    startBtn.forEach((sButton) => {
+        sButton.classList.toggle("darkBtn")
+    })
+
+    // pScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: rgb(214, 214, 214) solid 1px;")
+    // cScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: rgb(214, 214, 214) solid 1px;")
+    pScore.classList.toggle("darkScore");
+    cScore.classList.toggle("darkScore")
 
 }
