@@ -251,3 +251,17 @@ function calculator(pSelection, cSelection) {
         return true;
     }
 }
+
+function darkMode(){
+    let page = document.querySelector("*");
+    page.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214);")
+
+    rockBtn.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
+    paperBtn.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
+    scissorBtn.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
+    startBtn.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
+
+    pScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
+    cScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: white solid 1px;")
+
+}

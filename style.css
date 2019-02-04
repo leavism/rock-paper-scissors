@@ -11,7 +11,15 @@
     display: grid;
     grid-template-areas: "log choices score";
     grid-template-columns: 200px 350px 200px;
-    grid-template-rows: 900px;
+    grid-template-rows: 1080px;
+}
+
+bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    /* background: dodgerblue; */
 }
 
 log {
@@ -84,6 +92,10 @@ log p , choices, score, div, button, label{
     -moz-animation: fadein 1s; /* Firefox */
     -webkit-animation: fadein 1s; /* Safari and Chrome */
     -o-animation: fadein 1s; /* Opera */
+}
+
+.lights:hover {
+    text-decoration: underline;
 }
 
 @keyframes fadein {
