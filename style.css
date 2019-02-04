@@ -79,7 +79,7 @@ p {
     margin-top: 7px;
 }
 
-log p {
+log p , choices, score, div, button, label{
     animation: fadein 1s;
     -moz-animation: fadein 1s; /* Firefox */
     -webkit-animation: fadein 1s; /* Safari and Chrome */
