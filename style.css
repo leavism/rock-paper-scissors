@@ -87,7 +87,7 @@ playerChoices {
     color: rgb(214, 214, 214);
 }
 
-.pScore, .cScore {
+.pScore, .cScore, .rCount {
     border: black 1px solid;
     padding: 3px 0 3px 3px;
     margin-bottom: 10px;
@@ -97,7 +97,7 @@ playerChoices {
     background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: rgb(214, 214, 214) solid 1px;
 }
 
-.pValue, .cValue {
+.pValue, .cValue, .rValue {
     float: right;
     padding-right: 3px;
 }

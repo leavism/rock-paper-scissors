@@ -34,6 +34,14 @@ cValue.classList = "cValue"
 cValue.textContent = "0"
 cScore.append(cValue);
 
+let rCount = document.createElement("div")
+rCount.classList = "rCount"
+rCount.textContent ="round"
+let rValue = document.createElement("span");
+rValue.classList = "rValue"
+rValue.textContent = "0/5"
+rCount.append(rValue);
+
 let choiceLabel = document.createElement("label")
 choiceLabel.textContent = "choices";
 
@@ -71,7 +79,6 @@ function start() {
         game();
     }, 1000);
 }
-
 
 function game() {
     let playerScore = parseInt(document.querySelector('span[class="pValue"]').textContent);
@@ -215,6 +222,7 @@ function removeChoices(){
 }
 
 function checkEnd(round, pScore, cScore){
+    rValue.textContent = `${round}/5`;
     if(round >= 5){
         removeChoices();
         if (pScore == cScore){
@@ -228,6 +236,7 @@ function checkEnd(round, pScore, cScore){
 function addScores() {
     score.append(pScore);
     score.append(cScore);
+    score.append(rCount);
 }
 
 function addLabels(){
@@ -276,5 +285,6 @@ function darkMode(){
     // cScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: rgb(214, 214, 214) solid 1px;")
     pScore.classList.toggle("darkScore");
     cScore.classList.toggle("darkScore")
+    rCount.classList.toggle("darkScore")
 
 }
