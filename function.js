@@ -4,35 +4,25 @@ startBtn.forEach((sButton) => {
     sButton.addEventListener("click", start);
 })
 
-
 let log = document.querySelector("log");
 let choices = document.querySelector("choices");
-let playerChoices = document.createElement('playerChoices');
-let scissorBtn = document.createElement('button');
-let paperBtn = document.createElement('button');
-let rockBtn = document.createElement('button');
 let score = document.querySelector("score");
+
+let playerChoices = document.createElement('playerChoices');
+let scissorBtn = makeBtn("scissor");
+let paperBtn = makeBtn("paper");
+let rockBtn = makeBtn("rock");
+playerChoices.append(rockBtn);
+playerChoices.append(paperBtn);
+playerChoices.append(scissorBtn);
 
 let options = ["rock", "paper", "scissor"];
 
 let scoreLabel = document.createElement("label")
 scoreLabel.textContent = "score";
 
-let pScore = document.createElement("div")
-pScore.classList = "pScore"
-pScore.textContent = "you"
-let pValue = document.createElement("span")
-pValue.classList = "pValue"
-pValue.textContent = "0"
-pScore.append(pValue);
-
-let cScore = document.createElement("div")
-cScore.classList = "cScore"
-cScore.textContent = "computer"
-let cValue = document.createElement("span")
-cValue.classList = "cValue"
-cValue.textContent = "0"
-cScore.append(cValue);
+let pScore = makeScore("player")
+let cScore = makeScore("computer")
 
 let rCount = document.createElement("div")
 rCount.classList = "rCount"
@@ -45,17 +35,24 @@ rCount.append(rValue);
 let choiceLabel = document.createElement("label")
 choiceLabel.textContent = "choices";
 
-rockBtn.classList.add("rockBtn")
-rockBtn.textContent = "Rock";
-playerChoices.append(rockBtn);
+function makeScore(name){
+    let score = document.createElement('div');
+    score.classList =`${name[0]}Score`;
+    score.textContent = name;
 
-paperBtn.classList.add("paperBtn")
-paperBtn.textContent = "Paper";
-playerChoices.append(paperBtn);
+    let value = document.createElement("span");
+    value.classList = `${name[0]}Value`;
+    value.textContent = "0";
+    score.append(value);
+    return score;
+}
 
-scissorBtn.classList.add("scissorBtn")
-scissorBtn.textContent = "Scissor";
-playerChoices.append(scissorBtn);
+function makeBtn(name) {
+    let button = document.createElement("button");
+    button.classList.add(`${name}Btn`);
+    button.textContent = titleCase(name);
+    return button;
+}
 
 function start() {
     let startP = document.createElement("p");
@@ -94,28 +91,23 @@ function game() {
 
         let result = calculator(playerChoice, computerChoice);
 
-        setTimeout(function(){
-            let cPrompt = document.createElement('p');
-            cPrompt.textContent = `the computer chooses ${computerChoice}.`
-            log.prepend(cPrompt);
+        updateLog(`the computer chooses ${computerChoice}.`, 500)
 
-            if (result) {
-                playerScore++;
-                updateLog("you score.")
-            }
-            else if (result === null) {
-                updateLog("neither scored.")
-            }
-            else { 
-                computerScore++;
-                updateLog("the computer scores.")
-            };
+        if (result) {
+            playerScore++;
+            updateLog("you score.", 1000)
+        }
+        else if (result === null) {
+            updateLog("neither scored.", 1000)
+        }
+        else { 
+            computerScore++;
+            updateLog("the computer scores.", 1000)
+        };
 
-            updateScores(playerScore, computerScore);
-            round++;
-            checkEnd(round, playerScore, computerScore);
-        }, 500)
-
+        updateScores(playerScore, computerScore);
+        round++;
+        checkEnd(round, playerScore, computerScore);
     });
 
     paperBtn.addEventListener("click", function(){
@@ -127,28 +119,23 @@ function game() {
 
         let result = calculator(playerChoice, computerChoice);
 
-        setTimeout(function(){
-            let cPrompt = document.createElement('p');
-            cPrompt.textContent = `the computer chooses ${computerChoice}.`
-            log.prepend(cPrompt);
+        updateLog(`the computer chooses ${computerChoice}.`, 500)
 
-            if (result) {
-                playerScore++;
-                updateLog("you score.")
-            }
-            else if (result === null) {
-                updateLog("neither scored.")
-            }
-            else { 
-                computerScore++;
-                updateLog("the computer scores.")
-            };
+        if (result) {
+            playerScore++;
+            updateLog("you score.", 1000)
+        }
+        else if (result === null) {
+            updateLog("neither scored.", 1000)
+        }
+        else { 
+            computerScore++;
+            updateLog("the computer scores.", 1000)
+        };
 
-            updateScores(playerScore, computerScore);
-            round++;
-            checkEnd(round, playerScore, computerScore);
-        }, 500)
-
+        updateScores(playerScore, computerScore);
+        round++;
+        checkEnd(round, playerScore, computerScore);
     });
 
     scissorBtn.addEventListener("click", function(){
@@ -160,38 +147,36 @@ function game() {
 
         let result = calculator(playerChoice, computerChoice);
 
-        setTimeout(function(){
-            let cPrompt = document.createElement('p');
-            cPrompt.textContent = `the computer chooses ${computerChoice}.`
-            log.prepend(cPrompt);
+        updateLog(`the computer chooses ${computerChoice}.`, 500)
 
-            if (result) {
-                playerScore++;
-                updateLog("you score.")
-            }
-            else if (result === null) {
-                updateLog("neither scored.")
-            }
-            else { 
-                computerScore++;
-                updateLog("the computer scores.")
-            };
+        if (result) {
+            playerScore++;
+            updateLog("you score.", 1000)
+        }
+        else if (result === null) {
+            updateLog("neither scored.", 1000)
+        }
+        else { 
+            computerScore++;
+            updateLog("the computer scores.", 1000)
+        };
 
-            updateScores(playerScore, computerScore);
-            round++;
-            checkEnd(round, playerScore, computerScore);
-        }, 500)
+        updateScores(playerScore, computerScore);
+        round++;
+        checkEnd(round, playerScore, computerScore);
 
     });
 }
 
 function updateLog(text){
+    if (arguments[1] === undefined) {
+        var wait = 750
+    } else var wait = arguments[1];
     let genPrompt = document.createElement('p');
     genPrompt.textContent = text;
-    log.prepend(genPrompt);
-    // setTimeout(function(){
-    //     log.prepend(genPrompt);
-    // }, 1000)
+    setTimeout(function(){
+        log.prepend(genPrompt);
+    }, wait)
 
 
     let nListCount = log.childElementCount;
@@ -206,9 +191,11 @@ function updateLog(text){
     }
 }
 
-function updateScores(pScore, cScore){
-    pValue.textContent = pScore;
-    cValue.textContent = cScore;
+function updateScores(playerScore, computerScore){
+    let cValue = cScore.firstElementChild;
+    let pValue = pScore.firstElementChild;
+    pValue.textContent = playerScore;
+    cValue.textContent = computerScore;
 }
 
 function addChoices() {
@@ -270,21 +257,25 @@ function calculator(pSelection, cSelection) {
 function darkMode(){
     let page = document.querySelector("*");
     page.classList.toggle("darken");
-    // page.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214);")
 
     rockBtn.classList.toggle("darkBtn")
     paperBtn.classList.toggle("darkBtn")
     scissorBtn.classList.toggle("darkBtn")
-    // startBtn.classList.toggle("darkBtn")
 
     startBtn.forEach((sButton) => {
         sButton.classList.toggle("darkBtn")
     })
 
-    // pScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: rgb(214, 214, 214) solid 1px;")
-    // cScore.setAttribute("style", "background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: rgb(214, 214, 214) solid 1px;")
     pScore.classList.toggle("darkScore");
     cScore.classList.toggle("darkScore")
     rCount.classList.toggle("darkScore")
 
 }
+
+function titleCase(str) {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+    }
+    return str.join(' ');
+  }
