@@ -25,6 +25,7 @@ body {
   width: 700px;
   position: absolute;
   left: 50%;
+  top: 15px;
   transform: translate(-50%, 0);
   grid-template-areas: "log action score";
   grid-template-columns: 200px 300px 200px;
