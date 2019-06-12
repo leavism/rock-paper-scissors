@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Rock, Papers, Scissors</title>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+  </head>
+  <body>
     <div id="container">
-        <log>
-            <p>it's offline.</p>
-            <p>you approach the computer.</p>
-        </log>
-        <choices>
-            <button class="startBtn">Start</button>
-        </choices>
-        <score>
-        </score>
+      <div class="log"></div>
+      <div class="action"></div>
+      <div class="score"></div>
     </div>
+    <script src="app.js"></script>
     <script src="function.js"></script>
-</body>
-<bottom><div onclick="darkMode()" class="lights">switch lights.</div></bottom>
-
+    <div onclick="darkMode()" class="lights">lights.</div>
+  </body>
 </html>

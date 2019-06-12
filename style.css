@@ -1,152 +1,132 @@
 * {
-    margin: 0; padding: 0;
-    font-size: 12pt;
-    outline: none;
-}
-
-.darken {
-    background: rgb(37, 37, 37); color: rgb(214, 214, 214);
-}
-
-
-#container {
-    max-width: 750px;
-    margin: 20px auto;
-    /* border: 1px solid black; */
-    display: grid;
-    grid-template-areas: "log choices score";
-    grid-template-columns: 200px 350px 200px;
-    grid-template-rows: 1080px;
-}
-
-bottom {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 5px;
-    /* background: dodgerblue; */
-}
-
-log {
-    grid-area: log;
-    word-wrap: break-word;
-    /* background-color: dodgerblue; */
-
-}
-
-choices {
-    grid-area: choices;
-    margin-left: 2px;
-}
-
-score {
-    grid-area: score;
-    /* background: dodgerblue; */
-}
-
-label {
+    margin: 0;
+    padding: 0;
     font-size: 14pt;
-}
-
-choices label {
-    display: block;
-}
-
-.startBtn, .rockBtn, .paperBtn, .scissorBtn {
-    padding: 5px 7px 5px 7px;
-    border: black 1px solid;
-    position: relative;
-    background: white;
-}
-
-playerChoices {
-    position: relative;
-    margin-top: 25px;
-}
-
-.rockBtn, .paperBtn, .scissorBtn {
-    margin: 10px 4px 0 0;
-}
-
-.startBtn{
-    margin-top: 0px;
-}
-
-.startBtn:active, .rockBtn:active, .paperBtn:active, .scissorBtn:active {
-    color: black;
-    border: black 1px dashed;
-}
-
-.darkBtn {
-    background: rgb(37, 37, 37);
-    color: rgb(214, 214, 214);
-    border: rgb(214, 214, 214) solid 1px;
-}
-
-.darkBtn:active {
-    border: rgb(214, 214, 214) dashed 1px;
-    color: rgb(214, 214, 214);
-}
-
-.pScore, .cScore, .rCount {
-    border: black 1px solid;
-    padding: 3px 0 3px 3px;
-    margin-bottom: 10px;
-}
-
-.darkScore {
-    background: rgb(37, 37, 37); color: rgb(214, 214, 214); border: rgb(214, 214, 214) solid 1px;
-}
-
-.pValue, .cValue, .rValue {
-    float: right;
-    padding-right: 3px;
-}
-
-p {
-    margin-top: 7px;
-}
-
-log p , choices, score, div, button, label{
+    font-weight: 500;
+    outline: none;
     animation: fadein 1s;
     -moz-animation: fadein 1s; /* Firefox */
     -webkit-animation: fadein 1s; /* Safari and Chrome */
     -o-animation: fadein 1s; /* Opera */
+    /* border: 1px black solid; */
+    font-family: Arial;
+  }
+  
+body {
+  background: white;
+  height: 100%;
+  width: 100%;
 }
 
+  
+#container {
+  display: grid;
+  height: 90%;
+  width: 700px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  grid-template-areas: "log action score";
+  grid-template-columns: 200px 300px 200px;
+}
+
+.log {
+  grid-area: log;
+  overflow: hidden;
+}
+
+.action {
+  grid-area: action;
+}
+
+.score {
+  grid-area: score;
+}
+
+p {
+  margin: 10px;
+}
+
+label {
+  display: block;
+  font-size: 14pt;
+  font-weight: 600;
+}
+
+.action button {
+  background: white;
+  margin: 3px;
+  padding: 5px;
+  border: 1px black solid;
+}
+
+.action .darkBtn {
+  background: rgb(37, 37, 37) !important;
+  color: rgb(214, 214, 214) !important;
+  border: rgb(214, 214, 214) solid 1px !important;
+}
+.action .darkBtn:active {
+  border: rgb(214, 214, 214) dashed 1px !important;
+  color: rgb(214, 214, 214) !important;
+}
+
+.darken {
+  background: rgb(37, 37, 37);
+  color: rgb(214, 214, 214);
+}
+
+.choices {
+  margin: 5px;
+}
+
+button:active {
+  color: black;
+  border: 1px black dashed;
+}
+
+.lights {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translate(-100%, -100%);
+  width: 50px;
+}
 .lights:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 @keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
