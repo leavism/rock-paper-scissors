@@ -78,7 +78,7 @@ function checkRound(round, cScore, pScore, rps) {
       updateLog("you win.");
       action.removeChild(rps);
     } else {
-      updateLog("neither win.");
+      updateLog("neither won.");
       action.removeChild(rps);
     }
   }
