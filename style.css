@@ -61,7 +61,7 @@ label {
   border: 1px black solid;
 }
 
-.action .darkBtn {
+.darkBtn {
   background: rgb(37, 37, 37) !important;
   color: rgb(214, 214, 214) !important;
   border: rgb(214, 214, 214) solid 1px !important;

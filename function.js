@@ -216,9 +216,8 @@ function tempDisable(button, time) {
 
 function darkMode() {
   document.querySelector("body").classList.toggle("darken");
-  dark = !dark;
-  document.querySelector(".title-bar").classList.toggle("dark-bar");
   let allBtns = document.querySelectorAll("button");
+  dark = !dark;
   allBtns.forEach(btn => {
     btn.classList.toggle("darkBtn");
   });
