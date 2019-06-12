@@ -1,15 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 * {
     margin: 0;
     padding: 0;
-    font-size: 14pt;
-    font-weight: 500;
+    font-size: 10pt;
     outline: none;
     animation: fadein 1s;
     -moz-animation: fadein 1s; /* Firefox */
     -webkit-animation: fadein 1s; /* Safari and Chrome */
     -o-animation: fadein 1s; /* Opera */
     /* border: 1px black solid; */
-    font-family: Arial;
+    font-family: 'Merriweather', serif;
   }
   
 body {
@@ -51,7 +51,7 @@ p {
 label {
   display: block;
   font-size: 14pt;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .action button {
