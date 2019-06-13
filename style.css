@@ -1,24 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    font-size: 10pt;
-    outline: none;
-    animation: fadein 1s;
-    -moz-animation: fadein 1s; /* Firefox */
-    -webkit-animation: fadein 1s; /* Safari and Chrome */
-    -o-animation: fadein 1s; /* Opera */
-    /* border: 1px black solid; */
-    font-family: 'Merriweather', serif;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-size: 10pt;
+  outline: none;
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
+  /* border: 1px black solid; */
+  font-family: "Merriweather", serif;
+}
+
 body {
   background: white;
   height: 100%;
   width: 100%;
 }
 
-  
 #container {
   display: grid;
   height: 90%;
